@@ -126,7 +126,8 @@ p {
 }
 
 .btn:hover {
-  background: #3cb0fd;
+  background: #fff;
+  color: hsl(71, 73%, 54%);
   text-decoration: none;
 }
 
