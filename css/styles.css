@@ -2,8 +2,7 @@ body {
   font-family: 'Karla', sans-serif;
   font-size: 1rem;
   background-color: hsl(204, 43%, 93%);
-  text-align: center;
-  margin: 150px 0 0 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -12,59 +11,76 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 p {
   font-size: 0.8rem;
 }
 
-/* ---------- TOP ---------- */
-
-.top-row {
-  background-color: #fff;
-  padding: 20px 50px 20px 50px;
-  border-radius: 10px 10px 0 0;
-  display: block;
-  width: 500px;
-  text-align: left;
-  margin: auto;
+.container {
+  display: grid;
+  grid-template-columns: 280px 280px;
+  grid-template-rows: 180px 220px;
+  grid-template-areas: "top top""b-l b-r";
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.join-header {
+.shadow {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-radius: 0.4375rem 0.4375rem 0.4375rem 0.4375rem;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+}
+
+/* ---------- TOP ---------- */
+
+.header-row {
+  grid-area: top;
+  border-radius: 0.4375rem 0.4375rem 0 0;
+  background-color: #fff;
+  padding: 30px 40px 20px 40px;
+}
+
+.header-title {
   color: hsl(179, 62%, 43%);
 }
 
-.join-sub-header {
+.header-sub-title {
   color: hsl(71, 73%, 54%);
 
 }
 
-.join-message {
+.header-message {
   color: hsl(218, 22%, 67%);
   margin: 0 auto 10px auto;
 }
 
 /* ---------- BOT ---------- */
 
-.bottom-header, .price {
+.bottom-row-title, .price {
   color: hsl(204, 43%, 93%);
-}
-
-.bottom-header {
-  margin-top: 0px;
 }
 
 /* ---------- BOT L ---------- */
 
 .bottom-left-row {
+  grid-area: b-l;
+  border-radius: 0 0 0 0.4375rem;
   background-color: hsl(179, 62%, 43%);
-  padding: 50px;
-  border-radius: 0 0 0 10px;
-  height: 170px;
-  width: 200px;
-  display: inline-block;
-  text-align: left;
+  padding: 20px 40px 0 40px;
 }
 
 .price {
@@ -72,11 +88,11 @@ p {
   font-weight: 600;
   display: inline-block;
   height: 20px;
-  margin: 10px auto 10px auto;
+  margin: 5px auto 10px auto;
 }
 
 .pm {
-  color: hsl(179, 62%, 60%);
+  color: rgb(139, 217, 221);
   display: inline-block;
   height: 20px;
   position: relative;
@@ -87,8 +103,7 @@ p {
 
 .access {
   color: hsl(204, 43%, 93%);
-  margin: 0 auto 10px auto;
-  padding-bottom: 20px;
+  margin: 0 auto 25px auto;
 }
 
 .btn {
@@ -118,20 +133,17 @@ p {
 /* ---------- BOT R ---------- */
 
 .bottom-right-row {
-  background-color: hsl(179, 62%, 47%);
-  padding: 50px;
-  border-radius: 0 0 10px 0;
-  height: 170px;
-  width: 200px;
-  display: inline-block;
-  text-align: left;
+  grid-area: b-r;
+  border-radius: 0 0 0.4375rem 0;
+  background-color: rgb(73, 190, 190);
+  padding: 20px 40px 0 40px;
 }
 
 ul {
   list-style-type: none;
   padding-left: 0;
-  color: hsl(204, 43%, 84%);
-  font-size: 0.8rem;
+  color: rgb(183, 240, 244);
+  font-size: 0.75rem;
   line-height: 1.5;
   margin-bottom: 0;
 }
