@@ -8,21 +8,27 @@ body {
 
 h1 {
   font-size: 1.2rem;
+  color: hsl(179, 62%, 43%);
 }
 
 h2 {
   font-size: 0.9rem;
+  color: hsl(204, 43%, 93%);
 }
 
 p {
   font-size: 0.8rem;
+  color: hsl(218, 22%, 67%);
+  margin: 0 auto 10px auto;
 }
 
 .container {
   display: grid;
   grid-template-columns: 280px 280px;
   grid-template-rows: 180px 220px;
-  grid-template-areas: "top top""b-l b-r";
+  grid-template-areas:
+    "header header"
+    "left right";
   justify-content: center;
   align-content: center;
   width: 100vw;
@@ -48,36 +54,24 @@ p {
 /* ---------- TOP ---------- */
 
 .header-row {
-  grid-area: top;
+  grid-area: header;
   border-radius: 0.4375rem 0.4375rem 0 0;
   background-color: #fff;
   padding: 30px 40px 20px 40px;
 }
 
-.header-title {
-  color: hsl(179, 62%, 43%);
-}
-
 .header-sub-title {
   color: hsl(71, 73%, 54%);
-
-}
-
-.header-message {
-  color: hsl(218, 22%, 67%);
-  margin: 0 auto 10px auto;
-}
-
-/* ---------- BOT ---------- */
-
-.bottom-row-title, .price {
-  color: hsl(204, 43%, 93%);
 }
 
 /* ---------- BOT L ---------- */
 
+.price {
+  color: hsl(204, 43%, 93%);
+}
+
 .bottom-left-row {
-  grid-area: b-l;
+  grid-area: left;
   border-radius: 0 0 0 0.4375rem;
   background-color: hsl(179, 62%, 43%);
   padding: 20px 40px 0 40px;
@@ -134,7 +128,7 @@ p {
 /* ---------- BOT R ---------- */
 
 .bottom-right-row {
-  grid-area: b-r;
+  grid-area: right;
   border-radius: 0 0 0.4375rem 0;
   background-color: rgb(73, 190, 190);
   padding: 20px 40px 0 40px;
@@ -147,4 +141,57 @@ ul {
   font-size: 0.75rem;
   line-height: 1.5;
   margin-bottom: 0;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media only screen and (max-width: 580px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 0.85rem;
+  }
+
+  p {
+    font-size: 0.67rem;
+    margin: 0 auto 10px auto;
+    line-height: 1.8;
+  }
+
+  .header-sub-title {
+    font-size: 0.8rem;
+  }
+
+  .container {
+    grid-template-columns: 0.1fr;
+    grid-template-rows: 0.1fr 0.37fr 0.4fr;
+    grid-template-areas:
+     "header"
+     "left"
+     "right"
+  }
+
+  .shadow {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    ;
+  }
+
+  .header-row {
+    padding: 15px 25px 15px 25px;
+  }
+
+  .bottom-left-row {
+    border-radius: 0 0 0 0;
+    padding: 15px 25px 20px 25px;
+  }
+
+  .bottom-right-row {
+    border-radius: 0 0 0.4375rem 0.4375rem;
+    padding: 15px 25px 20px 25px;
+  }
 }
